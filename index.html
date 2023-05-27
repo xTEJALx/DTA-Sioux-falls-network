@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,31 +10,44 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/d3-3.x.x-compat/d3-3.5.17.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script> -->
-
+  <style>
+    .center {
+      display: flex;
+      justify-content: center;
+    }
+    
+    .center label,
+    .center input[type="radio"],
+    .center input[type="submit"] {
+      margin: 0 10px;
+    }
+  </style>
 </head>
 <body>
+  <div class="center">
+    <label for="option1">density(k)</label>
+    <input type="radio" id="option1" name="option" value="option1" onclick="updateSim('density')">
+    <label for="option2">number of vehicles(q)</label>
+    <input type="radio" id="option2" name="option" value="option2" onclick="updateSim('vehicles')">
+    <label for="option3">speed(u)</label>
+    <input type="radio" id="option3" name="option" value="option3" onclick="updateSim('speed')">
+    <div id="timer" class ="timer"></div>
+    <!-- <input type="button" value="Start" onclick="startUpdatingNumbers(document.querySelector('input[name=\'option\']:checked').value)"> -->
+  </div>
+  
+  <table id="data-table">
+    <tr>
+      <td><div style=" display: table-cell;" id="graph2"></div></td>
+      <td><div style=" display: table-cell;" id="graph3"></div></td>
+      
+    </tr>
+    <tr>
+        <td><div style=" display: table-cell;" id="graph4"></div></td>
+        <td><div style=" display: table-cell;" id="graph1"></div></td>
+      </tr>
 
-
-
-    <div style="width: 100%; display: table;">
-        <div style="display: table-row">
-            <div style=" display: table-cell;" id="graph1"></div>
-            <div style="display: table-cell; " id ="graph2"></div>
-            <div style="display: table-cell; " id ="graph3"></div>
-            <div style="display: table-cell; " id ="graph4"></div>
-        </div>
-        <!-- <div style="display: table-row">
-            <div style=" display: table-cell;" id ="graph3" ></div>
-            <div style="display: table-cell; " id ="graph4"></div>
-        </div> -->
-    </div>
-<!--     
-    <div id="graph1"></div>
-    <div>hi</div> -->
-    <!-- <div id="graph2"></div> -->
-    <!-- <div id="graph"></div>
-    <div id="graph"></div> -->
-    <script src="script.js"></script>
-    
+  </table>
+  
+  <script src="script.js"></script>
 </body>
 </html>
